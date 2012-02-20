@@ -10,5 +10,9 @@ def processes(requet):
     return HttpResponse(html)
 
 def resources(requet):
-    html = "<html><title>Process</title><body><h2>Resources</h2></body></html>"
+    html = "<html><title>Resources</title><body><h2>Resources</h2></body></html>"
+    return HttpResponse(html)
+
+def fileSystem(requet):
+    html = "<html><title>File System</title><body><h2>File System</h2></body></html>"
     return HttpResponse(html)
