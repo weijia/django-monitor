@@ -1,5 +1,8 @@
 from django.conf.urls.defaults import patterns, include, url
-from systemInfo.views import systemInfo, processes, resources, fileSystem
+from systemInfo import systemInfo
+from resources import resources
+from processes import processes
+from fileSystems import fileSystems
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -19,5 +22,5 @@ urlpatterns = patterns('',
     url(r'system/', systemInfo),
     url(r'processes/', processes),
     url(r'resources/', resources),
-    url(r'filesystem/', fileSystem),
+    url(r'filesystems/', fileSystems),
 )

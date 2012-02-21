@@ -1,7 +1,24 @@
 <html>
-    <title>System Information</title>
+    <title>General System Information</title>
     <body>
-        <h1>System Information</h1>
-        <p>Hostname: {{hostname}}</p>
+        <h1>General System Information</h1>
+        <h2>{{ hostname }}</h2>
+        <h3>{{ os_type}}</h3>
+        <p>Distribution Information</p>
+        <table>
+            <p>{{os_release|linebreaksbr}}</p>
+        </table>
+        <p>Kernel : {{ kernel_release }}</p>
+        <p>Desktop Environment : {{desktop_environment}}</p>
+
+        <h3>Hardware</h3>
+        <p>Memory : {{memory_size}} KB</p>
+        <p>Processes : {{cpu_model_name}} </p>
+        <h3>System Status</h3>
+        <p>Available disk space : {{disk_size}} KB</p><br/>
+        <a href="/processes/">View Process</a><br/>
+        <a href="/resources/">View Resources</a><br/>
+        <a href="/filesystems/">View File Systems</a><br/>
+        <a href="/system/">View System Info</a><br/>
     </body>
 </html>
