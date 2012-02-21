@@ -1,13 +1,19 @@
+<!DOCTYPE HTML>
 <html>
     <head>
         <title>Resources</title>
-        <META HTTP-EQUIV="Refresh" content="60">
+        <META HTTP-EQUIV="Refresh" content="1">
     </head>
     <body>
         <h1>Resources</h1>
         <a href="/system/">[View System Info]</a>
         <a href="/processes/">[View Processes]</a>
         <a href="/resources/">[View Resources]</a>
-        <a href="/filesystems/">[View File Systems]</a>
+        <a href="/filesystems/">[View File Systems]</a><br />
+        <p>CPU Load Average: {{cpu_load}}%</p>
+        <p>Memory Usage: {{mem_usage}}%</p>
+        <h4>Realtime Monitor</h4>
+        <pre>{{top|linebreaksbr}}</pre>
+        <p></p>
     </body>
 </html>

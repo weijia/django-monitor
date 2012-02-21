@@ -1,0 +1,11 @@
+#!/bin/bash
+
+function gen_chart() {
+        chl="chl=$1"; chd="chd=t:$2"; shift ; shift
+        while [ $# -gt 0 ]; do chl="${chl}|$1"; chd="${chd},$2"; shift; shift; done
+
+            #URL="http://chart.apis.google.com/chart?chs=500x200&cht=p3&chtt=Top+10+Processes+Running&$chl&$chd"
+            URL="http://home.ustc.edu.cn/~stephen1/pschart.html?chtt=Top+10+Processes+Running&$chl&$chd"
+            chrome "$URL" 2>/dev/null
+            }
+gen_chart `ps -eo "%c%C" --sort=-pcpu | head -n 11 | tail -n 10`

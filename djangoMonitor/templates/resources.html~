@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Resources</title>
+        <META HTTP-EQUIV="Refresh" content="60">
+        <script>
+            window.onload = function ()
+            {
+                // The data for the Line chart. Multiple lines are specified as seperate arrays.
+                var data = [10,4,17,50,25,19,20,25,30,29,30,29];
+
+                // Create the Line chart object. The arguments are the canvas ID and the data array.
+                var line = new RGraph.Line("myLine", data);
+
+                // The way to specify multiple lines is by giving multiple arrays, like this:
+                // var line = new RGraph.Line("myLine", [4,6,8], [8,4,6], [4,5,3]);
+
+                // Configure the chart to appear as you wish.
+                line.Set('chart.background.barcolor1', 'white');
+                line.Set('chart.background.barcolor2', 'white');
+                line.Set('chart.background.grid.color', 'rgba(238,238,238,1)');
+                line.Set('chart.colors', ['red']);
+                line.Set('chart.linewidth', 2);
+                line.Set('chart.filled', true);
+                line.Set('chart.hmargin', 5);
+                line.Set('chart.labels', ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']);
+                line.Set('chart.gutter.left', 40);
+
+                // Now call the .Draw() method to draw the chart.
+                line.Draw();
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Resources</h1>
+        <a href="/system/">[View System Info]</a>
+        <a href="/processes/">[View Processes]</a>
+        <a href="/resources/">[View Resources]</a>
+        <a href="/filesystems/">[View File Systems]</a><br />
+        <p>CPU Load Average:</p>
+        <div style="text-align: center">
+            <canvas id="line1" width="600" height="250">[Please wait...]</canvas>
+        </div>
+    </body>
+</html>

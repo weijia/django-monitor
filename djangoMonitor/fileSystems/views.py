@@ -1,7 +1,6 @@
-# Create your views here.
 from django.http import Http404, HttpResponse
 from django.shortcuts import render_to_response
-import os, platform, psutil
+import os
 
 def fileSystems(request):
     def get_file_system():
