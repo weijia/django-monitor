@@ -2,7 +2,7 @@ from django.http import Http404, HttpResponse
 from django.shortcuts import render_to_response
 import os, platform, psutil
 
-def systemInfo(request):
+def system(request):
     def hostname():
         file_open = open('/proc/sys/kernel/hostname')
         try:

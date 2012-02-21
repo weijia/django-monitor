@@ -1,8 +1,9 @@
 from django.conf.urls.defaults import patterns, include, url
-from systemInfo import systemInfo
-from resources import resources
-from processes import processes
-from fileSystems import fileSystems
+#from systemInfo import systemInfo
+from djangoMonitor.systemInfo.views import system
+from djangoMonitor.resources.views import resources
+from djangoMonitor.processes.views import processes
+from djangoMonitor.fileSystems.views import fileSystems
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -18,8 +19,8 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', systemInfo),
-    url(r'system/', systemInfo),
+    url(r'^$', system),
+    url(r'system/', system),
     url(r'processes/', processes),
     url(r'resources/', resources),
     url(r'filesystems/', fileSystems),

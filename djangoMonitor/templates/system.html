@@ -2,12 +2,15 @@
     <title>General System Information</title>
     <body>
         <h1>General System Information</h1>
+        <a href="/system/">[View System Info]</a>
+        <a href="/processes/">[View Processes]</a>
+        <a href="/resources/">[View Resources]</a>
+        <a href="/filesystems/">[View File Systems]</a>
         <h2>{{ hostname }}</h2>
         <h3>{{ os_type}}</h3>
         <p>Distribution Information</p>
-        <table>
-            <p>{{os_release|linebreaksbr}}</p>
-        </table>
+
+        <p>{{os_release|linebreaksbr}}</p>
         <p>Kernel : {{ kernel_release }}</p>
         <p>Desktop Environment : {{desktop_environment}}</p>
 
@@ -16,9 +19,5 @@
         <p>Processes : {{cpu_model_name}} </p>
         <h3>System Status</h3>
         <p>Available disk space : {{disk_size}} KB</p><br/>
-        <a href="/processes/">View Process</a><br/>
-        <a href="/resources/">View Resources</a><br/>
-        <a href="/filesystems/">View File Systems</a><br/>
-        <a href="/system/">View System Info</a><br/>
     </body>
 </html>
