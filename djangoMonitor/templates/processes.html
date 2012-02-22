@@ -4,6 +4,10 @@
         <title>Processes</title>
         <META HTTP-EQUIV="Refresh" content="2">
     </head>
+    <style>
+        .normal{background-color:white}
+        .change{background-color:#E0F8F7}
+    </style>
     <body>
         <h1>Processes</h1>
         <a href="/system/">[View System Info]</a>
@@ -11,6 +15,8 @@
         <a href="/resources/">[View Resources]</a>
         <a href="/filesystems/">[View File Systems]</a>
         <br />
+        <div onmouseover="this.className='change'" onmouseout="this.className='normal'">
         <pre>{{processes|linebreaksbr}}</pre>
-        </body>
-    </html>
+        </div>
+    </body>
+</html>

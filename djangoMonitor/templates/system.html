@@ -1,6 +1,10 @@
 <!DOCTYPE HTML>
 <html>
     <title>General System Information</title>
+    <style>
+        .normal{background-color:white}
+        .change{background-color:#E0F8F7}
+    </style>
     <body>
         <h1>General System Information</h1>
         <a href="/system/">[View System Info]</a>
@@ -9,16 +13,20 @@
         <a href="/filesystems/">[View File Systems]</a>
         <h2>{{ hostname }}</h2>
         <h3>{{ os_type}}</h3>
-        <p>Distribution Information</p>
-
-        <p>{{os_release|linebreaksbr}}</p>
-        <p>Kernel : {{ kernel_release }}</p>
-        <p>Desktop Environment : {{desktop_environment}}</p>
-
+        <div onmouseover="this.className='change'" onmouseout="this.className='normal'">
+            <p>Distribution Information</p>
+            <p>{{os_release|linebreaksbr}}</p>
+            <p>Kernel : {{ kernel_release }}</p>
+            <p>Desktop Environment : {{desktop_environment}}</p>
+        </div>
         <h3>Hardware</h3>
-        <p>Memory : {{memory_size}} KB</p>
-        <p>Processes : {{cpu_model_name}} </p>
+        <div onmouseover="this.className='change'" onmouseout="this.className='normal'">
+            <p>Memory : {{memory_size}} KB</p>
+            <p>Processes : {{cpu_model_name}} </p>
+        </div>
         <h3>System Status</h3>
-        <p>Available disk space : {{disk_size}} KB</p><br/>
+        <div onmouseover="this.className='change'" onmouseout="this.className='normal'">
+            <p>Available disk space : {{disk_size}} KB</p><br/>
+        </div>
     </body>
 </html>

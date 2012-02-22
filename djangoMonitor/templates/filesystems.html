@@ -4,17 +4,20 @@
         <title>File Systems</title>
         <META HTTP-EQUIV="Refresh" content="60">
     </head>
+    <style>
+        .normal{background-color:white}
+        .change{background-color:#E0F8F7}
+    </style>
     <body>
         <h1>File Systems</h1>
-        <a href="/system/">[View System Info]</a>
+        <a href="/system/" >[View System Info]</a>
         <a href="/processes/">[View Processes]</a>
         <a href="/resources/">[View Resources]</a>
         <a href="/filesystems/">[View File Systems]</a>
         <br />
+        <div onmouseover="this.className='change'" onmouseout="this.className='normal'">
         <pre>{{filesystems|linebreaksbr}}</pre>
-        <br />
-        <br />
-        <br />
+        </div>
         <br />
     </body>
 </html>

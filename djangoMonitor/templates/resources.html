@@ -4,17 +4,25 @@
         <title>Resources</title>
         <META HTTP-EQUIV="Refresh" content="1">
     </head>
+    <style>
+        .normal{background-color:white}
+        .change{background-color:#E0F8F7}
+    </style>
     <body>
         <h1>Resources</h1>
         <a href="/system/">[View System Info]</a>
         <a href="/processes/">[View Processes]</a>
         <a href="/resources/">[View Resources]</a>
         <a href="/filesystems/">[View File Systems]</a><br />
-        <p>CPU Load Average: {{cpu_load}}%</p>
-        <p>Memory Usage: {{mem_usage}}%</p>
+        <div onmouseover="this.className='change'" onmouseout="this.className='normal'">
+            <p>CPU Load Average: {{cpu_load}}%</p>
+            <p>Memory Usage: {{mem_usage}}%</p>
+        </div>
         <img src="/media/utilization.svg" width="600" height="210">
         <h4>Realtime Monitor</h4>
+        <div onmouseover="this.className='change'" onmouseout="this.className='normal'">
         <pre>{{top|linebreaksbr}}</pre>
+        </div>
         <p></p>
     </body>
 </html>
