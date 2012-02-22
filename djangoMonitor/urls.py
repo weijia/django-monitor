@@ -1,9 +1,10 @@
+import settings
 from django.conf.urls.defaults import patterns, include, url
-#from systemInfo import systemInfo
 from djangoMonitor.systemInfo.views import system
 from djangoMonitor.resources.views import resources
 from djangoMonitor.processes.views import processes
 from djangoMonitor.fileSystems.views import fileSystems
+import os
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -24,4 +25,5 @@ urlpatterns = patterns('',
     url(r'processes/', processes),
     url(r'resources/', resources),
     url(r'filesystems/', fileSystems),
+    url(r'^media/(?P<path>.*)$','django.views.static.serve',{'document_root': settings.FILE_UPLOAD_TEMP_DIR}),
 )
