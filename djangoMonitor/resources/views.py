@@ -1,12 +1,14 @@
 from django.http import Http404, HttpResponse
 from django.shortcuts import render_to_response
 import os, string, settings
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
 from pylab import *
 
 
 def resources(request):
     def graphics(cpu, ram, network):
-        # create figure
         figwidth = 10.0    # inches
         figheight = 3.5   # inches
         figure(1, figsize=(figwidth, figheight))
@@ -54,7 +56,10 @@ def resources(request):
         legend((patches[0], patches[2]), ('Used', 'Unused'), loc=(0,-.05))
 
         os.popen('rm static/utilization.png -rf')
-        savefig(settings.ROOT_PATH + '/media/' + 'utilization')
+        savefig(settings.ROOT_PATH + '/media/' + 'utilization.svg', format="svg")
+
+        # create figure
+        clf()
         return 0
     def cpu_usage():
         usage = os.popen("ps aux|awk 'NR > 0 { s +=$3 }; END {print s}'").read().strip()
